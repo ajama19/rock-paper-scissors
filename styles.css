@@ -1,0 +1,77 @@
+/* styles.css */
+
+* {
+    margin: 0 auto;
+}
+
+html {
+    min-height: 100%;
+    background-image: url('images/background.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+ }
+ 
+
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    30% { opacity: 1;}
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0 }
+    100% { opacity: 1 }
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.hidden {
+    display: none;
+}
+
+.intro-text {
+    width: 60%;
+    align-self: center;
+    text-align: center;
+    font-size: 70px;
+    font-family: 'Kolker Brush', 'Brush Script MT', cursive;
+    color: rgb(47, 27, 14);
+    animation-name: fadeInOut;
+    animation-duration: 15s;
+    animation-fill-mode: forwards;
+}
+
+#red-para {
+    color: rgb(101, 20, 20);
+}
+
+.game-ui {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    animation-name: fadeIn;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    animation-delay: -1s;
+}
+
+#title {
+    font-family: 'Kolker Brush','Brush Script MT', cursive;
+    font-size: 100px;
+    color: rgb(47, 27, 14);
+    padding-top: 5%;
+}
+
+#sub-title {
+    font-family: 'Kolker Brush';
+    font-size: 40px;
+    margin-top: -4%;
+    color: rgb(101, 20, 20);
+}
