@@ -43,12 +43,13 @@ body {
     font-family: 'Kolker Brush', 'Brush Script MT', cursive;
     color: rgb(47, 27, 14);
     animation-name: fadeInOut;
-    animation-duration: 15s;
+    animation-duration: 8s; /* speed this up when testing to 8s and slow to 15s for final*/
     animation-fill-mode: forwards;
 }
 
 #red-para {
     color: rgb(101, 20, 20);
+    font-size: 100px;
 }
 
 .game-ui {
@@ -59,19 +60,76 @@ body {
     animation-name: fadeIn;
     animation-duration: 5s;
     animation-fill-mode: forwards;
-    animation-delay: -1s;
+    /* animation-delay: -1s; */
 }
 
 #title {
-    font-family: 'Kolker Brush','Brush Script MT', cursive;
-    font-size: 100px;
+    font-family: 'Kolker Brush';
+    font-size: 110px;
     color: rgb(47, 27, 14);
     padding-top: 5%;
 }
 
 #sub-title {
     font-family: 'Kolker Brush';
-    font-size: 40px;
+    font-size: 50px;
     margin-top: -4%;
     color: rgb(101, 20, 20);
+}
+
+.scores {
+    display: flex;
+    gap: 300px;
+    font-size: 30px;
+    font-family: 'Grechen Fuemen', cursive;
+    padding: 5%;
+}
+
+.btn-images {
+    display: flex;
+    gap: 100px;
+}
+
+.stone, .scroll, .kunai{
+    width: 200px;
+    height: 180px
+} 
+
+.stone {
+    transition-property: width height;
+    background-image: url('images/stone.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.stone:hover {
+    background-image: url('images/stone-hover.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.scroll {
+    transition-property: width height;
+    background-image: url('images/scroll.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.scroll:hover {
+    background-image: url('images/scroll-hover.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.kunai {
+    transition-property: width height;
+    background-image: url('images/kunai.png');
+    background-size: 70%;
+    background-repeat: no-repeat;
+}
+
+.kunai:hover {
+    background-image: url('images/kunai-hover.png');
+    background-size: 70%;
+    background-repeat: no-repeat;
 }
