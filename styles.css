@@ -5,13 +5,8 @@
 }
 
 html {
-    min-height: 100%;
     background-image: url('images/background.jpg');
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-position: center center;
- }
- 
+}
 
 @keyframes fadeInOut {
     0% { opacity: 0; }
@@ -29,6 +24,10 @@ body {
     display: flex;
     justify-content: center;
     min-height: 100vh;
+    margin: 2px;
+    border-style: none double;
+    border-width: 20px;
+    border-color: rgb(62, 46, 22);
 }
 
 .hidden {
@@ -60,14 +59,20 @@ body {
     animation-name: fadeIn;
     animation-duration: 5s;
     animation-fill-mode: forwards;
-    /* animation-delay: -1s; */
+    
 }
+
+.heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2%;
+} 
 
 #title {
     font-family: 'Kolker Brush';
     font-size: 110px;
     color: rgb(47, 27, 14);
-    padding-top: 5%;
 }
 
 #sub-title {
@@ -79,20 +84,33 @@ body {
 
 .scores {
     display: flex;
-    gap: 300px;
     font-size: 30px;
     font-family: 'Grechen Fuemen', cursive;
-    padding: 5%;
+    padding: 5% 3%;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.scores > .your-score {
+    padding-right: 100px;
+    padding-left: 100px;
+}
+
+.scores > .comp-score {
+    padding-left: 100px;
+    padding-right: 100px;
 }
 
 .btn-images {
     display: flex;
     gap: 100px;
+    flex-wrap: wrap;
 }
 
 .stone, .scroll, .kunai{
     width: 200px;
-    height: 180px
+    height: 180px;
+    flex-shrink: 3;
 } 
 
 .stone {
@@ -132,4 +150,52 @@ body {
     background-image: url('images/kunai-hover.png');
     background-size: 70%;
     background-repeat: no-repeat;
+}
+
+#output-text {
+    font-family: 'Grechen Fuemen';
+    font-size: 30px;
+    color:  rgb(101, 20, 20);
+    padding: 3%;
+}
+
+.game-win {
+    width: 70%;
+    align-self: center;
+    text-align: center;
+    font-size: 70px;
+    font-family: 'Kolker Brush', 'Brush Script MT', cursive;
+    color: rgb(47, 27, 14);
+    animation-name: fadeIn;
+    animation-duration: 8s; /* speed this up when testing to 8s and slow to 15s for final*/
+    animation-fill-mode: forwards;
+}
+
+.game-lose {
+    width: 70%;
+    align-self: center;
+    text-align: center;
+    font-size: 70px;
+    font-family: 'Kolker Brush', 'Brush Script MT', cursive;
+    color: rgb(47, 27, 14);
+    animation-name: fadeIn;
+    animation-duration: 8s; /* speed this up when testing to 8s and slow to 15s for final*/
+    animation-fill-mode: forwards;
+}
+
+.game-tie {
+    width: 70%;
+    align-self: center;
+    text-align: center;
+    font-size: 70px;
+    font-family: 'Kolker Brush', 'Brush Script MT', cursive;
+    color: rgb(47, 27, 14);
+    animation-name: fadeIn;
+    animation-duration: 8s; /* speed this up when testing to 8s and slow to 15s for final*/
+    animation-fill-mode: forwards;
+}
+
+.sub-para {
+    color:rgb(101, 20, 20);
+    font-size: 90px;
 }
