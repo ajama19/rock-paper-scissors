@@ -199,3 +199,29 @@ body {
     color:rgb(101, 20, 20);
     font-size: 90px;
 }
+
+#play-again-win, #play-again-lose, #play-again-tie {
+    color: rgb(62, 46, 22);
+    background-color: rgb(241, 235, 226);
+    border-color: rgb(62, 46, 22);
+    padding: 10px 15px;
+    font-family: 'Grechen Fuemen';
+    font-size: 25px;
+    border-width: 6px;
+    border-style: double;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+@keyframes shine {
+    0% { background-image: linear-gradient(to bottom right, rgb(202, 202, 202), rgb(241, 235, 226), rgb(241, 235, 226)); }
+    50% { background-image: linear-gradient(to bottom right, rgb(241, 235, 226), rgb(202, 202, 202),rgb(241, 235, 226)); }
+    100% { background-image: linear-gradient(to bottom right, rgb(241, 235, 226), rgb(241, 235, 226), rgb(202, 202, 202)); }
+}
+
+#play-again-win:hover, #play-again-lose:hover, #play-again-tie:hover {
+    animation-name: shine;
+    animation-duration: 0.2s;
+    animation-fill-mode: none;
+    scale: 1.2;
+}

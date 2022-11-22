@@ -126,7 +126,13 @@ let playAgainWin = document.getElementById('play-again-win');
 let playAgainLose = document.getElementById('play-again-lose');
 let playAgainTie = document.getElementById('play-again-tie');
 
+playAgainWin.addEventListener('click', resetGame());
+playAgainLose.addEventListener('click', resetGame());
+playAgainTie.addEventListener('click', resetGame());
+
 // resetGame restarts the game so you can play a new round
+// changes the scores back to 0
+// changes the end screen to hidden and makes game ui visible again
 function resetGame() {
     // make sure to reset scores on screen and playerScore and computerScore
     //
