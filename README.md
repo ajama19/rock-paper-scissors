@@ -5,7 +5,7 @@
 
 # Background Information:
 
-> This is essentially a game of rock paper scissors with a ninja theme. It was created to explore the basiscs of Javascript,
+> This is essentially a game of rock paper scissors with a ninja theme. It was created to explore the basics of Javascript,
 and practice using it in tandem with HTML and CSS.
 
 
