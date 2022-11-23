@@ -28,6 +28,11 @@ stoneBtn.addEventListener('click', playRound);
 scrollBtn.addEventListener('click', playRound);
 kunaiBtn.addEventListener('click', playRound);
 
+// declarations for game end buttons
+let playAgainWinBtn = document.getElementById('play-again-win');
+let playAgainLoseBtn = document.getElementById('play-again-lose');
+let playAgainTieBtn = document.getElementById('play-again-tie');
+
 
 // getComputer choice returns a string representing the computer's move
 function getComputerChoice() {
@@ -102,39 +107,53 @@ function playRound() {
     if (playerTotal === 5) {
         gameUI.setAttribute('class', 'hidden');
         playerWin.setAttribute('class', 'game-win');
-        console.log('player has won');
 
     //if the computer wins    
     } else if (computerTotal === 5) {
         gameUI.setAttribute('class', 'hidden');
         playerLose.setAttribute('class', 'game-lose');
-        console.log('computer has won');
 
     //if there is a tie
     } else if (playerTotal === 5 && computerTotal === 5) {
         gameUI.setAttribute('class', 'hidden');
         playerTie.setAttribute('class', 'game-tie');
-        console.log('tis a tie!');
     }
 
+
 }
 
+// game end screen buttons
+playAgainWinBtn.addEventListener('click', () => {
+    playerWin.setAttribute('class', 'hidden');
+    gameUI.setAttribute('class', 'game-ui');
+    playerTotal = 0;
+    computerTotal = 0;
+    playerScore.textContent = "You: " + playerTotal;
+    computerScore.textContent = "Enemy: " + computerTotal;
+    outputText.textContent = "Choose your weapon!";
+
+}, {capture: true});
+playAgainLoseBtn.addEventListener('click', () => {
+    playerLose.setAttribute('class', 'hidden');
+    gameUI.setAttribute('class', 'game-ui');
+    playerTotal = 0;
+    computerTotal = 0;
+    playerScore.textContent = "You: " + playerTotal;
+    computerScore.textContent = "Enemy: " + computerTotal;
+    outputText.textContent = "Choose your weapon!";
+
+}, {capture: true});
+playAgainTieBtn.addEventListener('click', () => {
+    playerTie.setAttribute('class', 'hidden');
+    gameUI.setAttribute('class', 'game-ui');
+    playerTotal = 0;
+    computerTotal = 0;
+    playerScore.textContent = "You: " + playerTotal;
+    computerScore.textContent = "Enemy: " + computerTotal;
+    outputText.textContent = "Choose your weapon!";
+
+}, {capture: true});
 
 
-// functions for starting a new game
-let playAgainWin = document.getElementById('play-again-win');
-let playAgainLose = document.getElementById('play-again-lose');
-let playAgainTie = document.getElementById('play-again-tie');
 
-playAgainWin.addEventListener('click', resetGame());
-playAgainLose.addEventListener('click', resetGame());
-playAgainTie.addEventListener('click', resetGame());
 
-// resetGame restarts the game so you can play a new round
-// changes the scores back to 0
-// changes the end screen to hidden and makes game ui visible again
-function resetGame() {
-    // make sure to reset scores on screen and playerScore and computerScore
-    //
-    return;
-}

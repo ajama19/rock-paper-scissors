@@ -42,7 +42,7 @@ body {
     font-family: 'Kolker Brush', 'Brush Script MT', cursive;
     color: rgb(47, 27, 14);
     animation-name: fadeInOut;
-    animation-duration: 8s; /* speed this up when testing to 8s and slow to 15s for final*/
+    animation-duration: 15s; /* speed this up when testing to 8s and slow to 15s for final*/
     animation-fill-mode: forwards;
 }
 
