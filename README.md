@@ -1,5 +1,3 @@
-# rock-paper-scissors
-
 # Introduction:
 
 > Your ninja village is under attack! Drive off the enemies in a game of stone, scroll, kunai! Only you can save your village!
