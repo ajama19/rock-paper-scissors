@@ -1,7 +1,7 @@
 // script.js
 
 /* This code removes the introduction text once the animation has completed
-and makes game user interface appear */
+and makes the game user interface appear */
 let intro = document.getElementById('introduction');
 let gameUI = document.getElementById('interface');
 intro.addEventListener('animationend', (event) => {
@@ -10,7 +10,7 @@ intro.addEventListener('animationend', (event) => {
 });
 
 
-// functions for playing the game
+// This section contains functions for playing the game
 let playerTotal = 0;
 let computerTotal = 0;
 let playerScore = document.getElementById('player');
@@ -20,7 +20,7 @@ let stoneBtn = document.getElementById('stone-btn');
 let scrollBtn = document.getElementById('scroll-btn');
 let kunaiBtn = document.getElementById('kunai-btn');
 
-let playerWin = document.getElementById('game-end-win'); //document selector for player win screen
+let playerWin = document.getElementById('game-end-win'); 
 let playerLose = document.getElementById('game-end-loss');
 let playerTie = document.getElementById('game-end-tie');
 
@@ -28,13 +28,12 @@ stoneBtn.addEventListener('click', playRound);
 scrollBtn.addEventListener('click', playRound);
 kunaiBtn.addEventListener('click', playRound);
 
-// declarations for game end buttons
 let playAgainWinBtn = document.getElementById('play-again-win');
 let playAgainLoseBtn = document.getElementById('play-again-lose');
 let playAgainTieBtn = document.getElementById('play-again-tie');
 
 
-// getComputer choice returns a string representing the computer's move
+// getComputerChoice returns a string representing the computer's move
 function getComputerChoice() {
     const choices = ["stone", "scroll", "kunai"];
     let randomNum = Math.floor(Math.random() * 3); 
@@ -42,7 +41,8 @@ function getComputerChoice() {
 }
 
 
-// updateScore updates the scores for both the player and computer
+// updateScore takes in a "result" describing the winner of a round
+// and updates the scores for both the player and computer
 function updateScore(result) {
     if (result === 'draw') {
         ++playerTotal;
@@ -59,12 +59,8 @@ function updateScore(result) {
 }
 
 
-
-// playRound plays a round of the game and ends it after 5 rounds
-// 3 parts
-// first plays audio corresponding to clicked button
-// then compares player choice to computers and chooses a winner, updating score
-// finally 
+// playRound plays a round of the game, and ends the entire game once a 
+// player has reached 5 points
 function playRound() {
     let playerChoice = this.className;
     let computerChoice = getComputerChoice();
@@ -81,7 +77,7 @@ function playRound() {
         audio2.play();
     }
 
-    //then compare the player choice to the computer choice
+    // then compare the player choice to the computer choice
     // choose a victor and update the scores and the text div @ the bottom
     if (playerChoice === computerChoice) {
         outputText.textContent = 'Draw';
@@ -101,28 +97,24 @@ function playRound() {
 
     }
 
-    //check scores to see if one of the players has reached 5 points
-    //if they have declare a winner, & switch to the replay screen
-    //if the player wins
+    // Check scores to see if one of the players has reached 5 points
+    // and declare a winner
     if (playerTotal === 5) {
         gameUI.setAttribute('class', 'hidden');
         playerWin.setAttribute('class', 'game-win');
-
-    //if the computer wins    
+   
     } else if (computerTotal === 5) {
         gameUI.setAttribute('class', 'hidden');
         playerLose.setAttribute('class', 'game-lose');
 
-    //if there is a tie
     } else if (playerTotal === 5 && computerTotal === 5) {
         gameUI.setAttribute('class', 'hidden');
         playerTie.setAttribute('class', 'game-tie');
     }
 
-
 }
 
-// game end screen buttons
+// Buttons visible on the game end screen. Click to restart the game.
 playAgainWinBtn.addEventListener('click', () => {
     playerWin.setAttribute('class', 'hidden');
     gameUI.setAttribute('class', 'game-ui');
@@ -153,7 +145,4 @@ playAgainTieBtn.addEventListener('click', () => {
     outputText.textContent = "Choose your weapon!";
 
 }, {capture: true});
-
-
-
 
