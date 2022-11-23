@@ -73,6 +73,7 @@ body {
     font-family: 'Kolker Brush';
     font-size: 110px;
     color: rgb(47, 27, 14);
+    text-align: center;
 }
 
 #sub-title {
@@ -80,6 +81,7 @@ body {
     font-size: 50px;
     margin-top: -4%;
     color: rgb(101, 20, 20);
+    text-align: center;
 }
 
 .scores {
